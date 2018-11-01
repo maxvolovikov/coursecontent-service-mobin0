@@ -1,6 +1,5 @@
 const express = require('express');
 let app = express();
-let helpers = require('../helpers/github.js')
 var faker = require('faker')
 var fs = require('fs')
 
@@ -26,14 +25,7 @@ fs.writeFile("./test.json", JSON.stringify(req.body), 'utf8', function (err) {
 
 app.post('/repos', function (req, res) {
 
-  // This route should take the github username provided
-  // and get the repo information from the github API, then
-  // save the repo information in the database
-    // console.log("reqqqq", Object.keys(req))
-    console.log('************', Object.keys(req), req.body)
-  var filteredRepos = helpers.makeFilteredRepos(req.body)
-  // // console.log(filteredRepos).on('response', (r) => {console.log(r)})
-  res.end(JSON.stringify(filteredRepos))
+
 
 
 });
@@ -46,7 +38,7 @@ app.get('/repos', function (req, res) {
 
 });
 
-let port = 1128;
+let port = 3000;
 
 app.listen(port, function() {
   console.log(`listening on port ${port}`);
