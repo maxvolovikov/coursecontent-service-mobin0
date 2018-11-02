@@ -11,8 +11,17 @@ class CourseContent extends React.Component {
     }
 
   }
+  componentDidMount(){
+    this.fetchBlogPosts()
+  }
 
+  fetchBlogPosts() {
+    $.get('/api/blogs', (data) => {
+      this.setState({'data': data});
+      console.log(data)
+    })
 
+  }
   render(){
     return (
     <div> Keep it Positive! </div>
