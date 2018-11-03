@@ -40,7 +40,11 @@ var createSaveTestData = function(n) {
 
   }
   console.log("here", JSON.stringify(courses))
+  fs.writeFile('./test.json', JSON.stringify(courses), (err) => {
+  if (err) throw err;
+  console.log(`Seed of ${n} saved!`);
+  });
   savetoDB(courses);
 }
 
-createDB(1)
+createDB(100)

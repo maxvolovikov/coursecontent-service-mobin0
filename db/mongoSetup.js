@@ -1,9 +1,0 @@
-var mongoSetup = function() {
-
-
-
-
-
-
-
-}
