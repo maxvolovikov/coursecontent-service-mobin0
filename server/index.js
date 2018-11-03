@@ -3,7 +3,7 @@ let app = express();
 var faker = require('faker')
 var fs = require('fs')
 
-app.use(express.static(__dirname + '/../client/dist'));
+app.use(express.static(__dirname + '/../public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
