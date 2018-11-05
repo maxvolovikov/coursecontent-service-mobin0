@@ -12,55 +12,265 @@ h2 {
   color: #2C3E50;
 }
 
-#header-title {
-  font-size: 22px;
-  font-weight: 600;
-  margin: 0 0 10px;
+
+:root {
+  --main-transition-args: max-height .3s ease-in-out;
 }
-
-
-
-
-.courseItem {
-  width:100%;
-  background-color: lightgrey;
-  border:none;
-  outline:none;
-  text-align: left;
-  padding: 15px 20px;
-
-  font-size: 18px;
-  /*cursor: pointer;*/
-  transition: background-color 0.08s linear;
-display: flex;
-    align-items: center;
-    background: #f9f9f9;
-    border: 1px solid #e8e9eb;
-    cursor: pointer;
-    height: auto;
-    margin-top: 3px;
-    padding: 10px 30px 10px 22px;
-
+.app-container{
+  /*background-color:blue;*/
+  width: 50% ;
+  margin: 0 auto;
 
 }
-.entry {
-    padding: 0px 20px;
-  border-left: 1px solid whitesmoke;
-  border-bottom: 5px solid whitesmoke;
-  border-top: 5px solid whitesmoke;
-  border-right: 1px solid whitesmoke;
-  background:whitesmoke;
-display: flex;
-    padding: 12px 30px 12px 43px;
+  .app-header {
+    /*background:red;*/
+    width:95%;
+    display: grid;
+    grid-template-columns: repeat(1, 55% 20% 20% 5%)
+
+  }
+
+    .header-title {
+      padding-left:2.5px;
+      /*margin: 0 0 10px;*/
+      color: #29303b;
+        font-family: "Open Sans";
+      font-size: 22px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 600;
+      line-height: 31px;
+      /*width: 50%;*/
+    }
+
+    .expand {
+      font-size: 14px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 400;
+      line-height: 21px;
+      color: #1F7F94;
+      cursor: pointer;
+    }
+    .expand:hover {
+      color: #29303b;
+    }
+
+    .total-lecture-length {
+      font-family: "Open Sans";
+      font-size: 15px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 400;
+      line-height: 21px;
+      color: #29303b;
+    }
+    .total-lecture-duration {
+      font-family: "Open Sans";
+      font-size: 15px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 400;
+      line-height: 21px;
+      color: #29303b;
+    }
+
+  .course-content-container {
+    /*width:20%;*/
+    /*background-color: green;*/
+    /*display:grid;
+    grid-template-rows: 100% 100%;*/
+  }
+
+    .course-content {
+/*      width:8%;*/
+/*      background-color: pink;
+*/
+
+
+
+      }
+/*Course Items*/
+
+      .course-item-container {
+        display:grid;
+        grid-template-columns: 1fr
+        width:100%;
+
+/*    wid
+        display:flex;
+        flex-direction: column;*/
+
+      }
+        .course-item {
+
+      display:grid;
+      grid-template-columns: repeat(1,5% 70% 20% 10%);
+          background-color: lightgrey;
+          border:none;
+          outline:none;
+          text-align: left;
+
+          font-size: 18px;
+          /*cursor: pointer;*/
+          /*align-items: center;*/
+          background: #f9f9f9;
+          border: 1px solid #e8e9eb;
+          cursor: pointer;
+
+
+          height: auto;
+          margin-top: 3px;
+          padding: 10px 30px 10px 22px;
+
+
+        }
+
+        .plus-sign {
+      /*    border-right : 2px solid whitesmoke;*/
+          /*padding-bottom: 30px;*/
+          font-size: 20px;
+          font-style: normal;
+          font-variant: normal;
+          font-weight: 600;
+          line-height: 24px;
+          color: #007791;
+          /*display: block;*/
+/*          height: auto!important;
+          width: 10%;*/
+         /*float:left;*/
+        }
+
+        .course-title {
+
+            /*justify-content: space-between*/
+/*          border-right : 2px solid whitesmoke;
+          padding-right : 22px;*/
+          /*min-width: 200px;*/
+          /*height: auto!important;*/
+          /*width: 500px;*/
+/*          width: 60%;*/
+         float:left;
+          font-size: 15px;
+          font-style: normal;
+          font-variant: normal;
+          font-weight: 600;
+          line-height: 21px;
+          color: #505763;
+        }
+
+
+        .course-lecture-length {
+          font-family: "Open Sans";
+          font-size: 15px;
+          font-style: normal;
+          font-variant: normal;
+          font-weight: 400;
+          line-height: 21px;
+          color: #505763;
+
+          /*min-width: 200px;*/
+
+
+        }
+
+        .course-lecture-length-hidden {
+          visibility:hidden;
+        }
+        .course-lecture-duration{
+          font-family: "Open Sans";
+          font-size: 15px;
+          font-style: normal;
+          font-variant: normal;
+          font-weight: 400;
+          line-height: 21px;
+          color: #505763;
+
+        }
+
+/*Entries*/
+       .course-entries-shown{
+       width:100%
+        color: #FFFFFF;
+        overflow:hidden;
+        text-align: left;
+        max-height: 500px;
+                /*width:100%;*/
+        -webkit-transition: var(--main-transition-args);
+        -moz-transition: var(--main-transition-args);
+        -ms-transition: var(--main-transition-args);
+        -o-transition: var(--main-transition-args);
+      }
+
+      .course-entries {
+
+        max-height:0;
+        overflow:hidden;
+        -webkit-transition:var(--main-transition-args);
+        -moz-transition:var(--main-transition-args);
+        -ms-transition: var(--main-transition-args);
+        -o-transition: var(--main-transition-args);
+      }
+        .entry-course-items {
+          display:grid;
+          grid-template-columns: repeat(1, 10% 85% 5%);
+
+            font-family: "Open Sans";
+          font-size: 15px;
+          font-style: normal;
+          font-variant: normal;
+          font-weight: 400;
+          line-height: 21px;
+
     background-color: #fff;
     border: 1px solid #e8e9eb;
     border-top: none;
     color: #686f7a;
     letter-spacing: .3px;
     line-height: 1.33;
+    padding: 12px 30px 12px 43px;
+        }
+          .entry-course-items {
+
+          text-align: left;
+          }
+            .entry-image-div {
+              margin: 25 25 25 25;
+              /*background-color: red;*/
+            }
+              .entry-image {
+                height: 15px;
+                padding-right:15px;
+                min-width: 15px;
+              }
+            .entry-name-container {
+
+            }
+
+              .entry-name {
+                padding-left: 0;
+              }
+
+          .entry-details {
+                width:100%
+            /*width:20%;*/
+
+            /*align-items: right;*/
+          }
+            .entry-lecture-length {
+              text-align: left;
+            }
+
+
+/*.entry-image {
+  min-width: 50px;
 }
-
-
+.entry-name {
+  min-width: 250px;
+}
+.entry-lecture-length {
+  min-width: 200px;
+}*/
 /*.feed-list-item {
   min-height: 350px;
   margin: 40px;
