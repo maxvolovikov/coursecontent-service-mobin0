@@ -5,7 +5,9 @@ mongoose.Promise = global.Promise;
 const courseContentSchema = new mongoose.Schema({
   title : String,
   sectionNumber: Number,
-  entries: [{name: String, entryNumber: Number}]
+  entries: [{name: String,
+    duration: Number,
+    entryNumber: Number}]
 },
   {
     timestamps: true

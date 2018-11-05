@@ -1,21 +1,20 @@
 var faker = require('faker');
-var fs = require('file-system');
 var mongoose = require('mongoose');
 var db = require('./index.js');
 var courseContent = require('./courseContent.js');
-
+var fs = require('file-system');
 
 
 var createDB = function(n) {
-  console.log("www" + arguments)
+  // console.log("www" + arguments)
   createSaveTestData(n)
 }
 
 var savetoDB = function(userData){
-  console.log("trying")
+  // console.log("trying")
   courseContent.create(userData)
     .then(() => db.disconnect());
-
+    console.log("User Data Saved!")
 }
 
 
@@ -32,6 +31,7 @@ var createSaveTestData = function(n) {
     for(var j = 0 ; j < courselen; j++) {
       let entry = {}
       entry.name = "Talk by " + faker.name.findName();
+      entry.duration = Math.floor(Math.random()*360)
       entry.entryNumber = j + 1
       courseItem.entries.push(entry)
 
@@ -39,8 +39,11 @@ var createSaveTestData = function(n) {
       courses.push(courseItem)
 
   }
-  console.log("here", JSON.stringify(courses))
-  fs.writeFile('./test.json', JSON.stringify(courses), (err) => {
+  console.log("Saved to db/test.json", JSON.stringify(courses))
+  let prependTo = "var courseData = "
+  let appendTo = " \n export default courseData;"
+  var result = prependTo + JSON.stringify(courses) + appendTo
+  fs.writeFile('./db/test.js', result, (err) => {
   if (err) throw err;
   console.log(`Seed of ${n} saved!`);
   });
