@@ -51,4 +51,4 @@ class Entries extends React.Component {
 
 }
 
-export default Entries
+module.exports = Entries;
