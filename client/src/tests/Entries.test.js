@@ -39,6 +39,7 @@ let entry = {"name":"Talk by Marlen Daniel","duration":196,"entryNumber":1}
 describe('I am a KING', () => {
   test('works', () => {
     renderer.create(<Entries entry = {entry}/>)
+
   })
 })
 
