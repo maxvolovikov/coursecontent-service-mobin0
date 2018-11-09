@@ -29,7 +29,7 @@ class App extends React.Component {
   // this.state.lectureCount = currLectureCount
   this.setTime()
   this.setMinutes()
-  console.log("Fire", this.state.totalLectureCount, this.state.lectureCount)
+  // console.log("Fire", this.state.totalLectureCount, this.state.lectureCount)
   }
 
   setTime() {
@@ -49,11 +49,11 @@ class App extends React.Component {
   }
 
  setMinutes() {
-    console.log(this.state.totalLectureDuration)
+    // console.log(this.state.totalLectureDuration)
     let minutes = this.state.totalLectureDuration
     let hours = Math.floor(minutes/60)
     minutes = minutes - hours*60
-    console.log(minutes)
+    // console.log(minutes)
     this.state.minutes = minutes < 10 ? "0"+minutes : "" + minutes;
     this.state.hours=  hours < 10 ? "0"+hours : "" + hours;
 
@@ -79,7 +79,7 @@ componentDidMount(){
   expandClickHandler() {
 
     let setStates = this.state.courseItemSetStates
-    console.log(setStates)
+    // console.log(setStates)
     for(let stateSetter of setStates){
       stateSetter((prevState, props)=>{
        return {"hidden": !this.state.expanded} })
