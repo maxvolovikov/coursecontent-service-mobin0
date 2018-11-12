@@ -23,8 +23,6 @@ class CourseContent extends React.Component {
     // console.log(minutes)
     this.state.minutes = minutes < 10 ? "0"+minutes : "" + minutes;
     this.state.hours= "0" + hours
-
-
   }
   render () {
     return (
