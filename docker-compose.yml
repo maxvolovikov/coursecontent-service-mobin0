@@ -11,7 +11,7 @@ services:
     environment: 
       - MONGO_URI=mongodb://max:reviews7@ds151970.mlab.com:51970/reviews
   mongo: 
-    container_name: mongo-reviews
+    container_name: mongo-coursecontent
     image: mongo
     ports: 
       - '27019:27017'
